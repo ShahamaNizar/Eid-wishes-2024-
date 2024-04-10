@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak</title>
+</head>
+<body>
+
+<h1>Eid Mubarak!</h1>
+
+<div id="nameInput">
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" name="userName">
+    <button onclick="displayEidWish()">Submit</button>
+</div>
+
+<p id="eidWish" style="display: none;"></p>
+
+<script>
+function displayEidWish() {
+    var userName = document.getElementById("userName").value.toLowerCase();
+    var eidWish = document.getElementById("eidWish");
+    var nameInput = document.getElementById("nameInput");
+
+    var validNames = ["inshaf", "hasan", "hussein"];
+    var isSir = false;
+
+    if (userName !== "") {
+        for (var i = 0; i < validNames.length; i++) {
+            if (userName === validNames[i]) {
+                userName += " Sir";
+                isSir = true;
+                break;
+            }
+        }
+        nameInput.style.display = "none";
+        eidWish.style.display = "block";
+        if (isSir) {
+            eidWish.innerHTML = "Dearest " + userName + ",<br><br>" +
+                "You are a guiding light in many students' life, and I am grateful for all the knowledge and wisdom you have imparted. ✨<br>" +
+                "May Allah bless you with good health and happiness. 😊❣<br>" +
+                "I pray to Allah to shower you with countless blessings not only in this life but also in the Hereafter. Aameen 🤲🏻🤲🏻<br>" +
+                "My heartiest Eid wishes to you and your family. 🥰🥳🤩<br>" +
+                "Eid Mubarak! 🤝💫";
+        } else {
+            eidWish.innerHTML = "Dearest " + userName + ",<br><br>" +
+                "You are a guiding light in many students' life, and I am grateful for all the knowledge and wisdom you have imparted. ✨<br>" +
+                "May Allah bless you with good health and happiness. 😊❣<br>" +
+                "I pray to Allah to shower you with countless blessings not only in this life but also in the Hereafter. Aameen 🤲🏻🤲🏻<br>" +
+                "My heartiest Eid wishes to you and your family. 🥰🥳🤩<br>" +
+                "Eid Mubarak! 🤝💫";
+        }
+    } else {
+        alert("Please enter your name!");
+    }
+}
+</script>
+
+</body>
+</html>
